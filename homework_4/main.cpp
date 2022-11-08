@@ -10,9 +10,7 @@ public:
     martkutxedi(float, float);
     float P();
     float area();
-
-    float get_a() { return a; }
-    float get_b() { return b; }
+    void set(float, float);
 };
 
 martkutxedi::martkutxedi() {
@@ -33,6 +31,11 @@ float martkutxedi::area() {
     return a * b;
 }
 
+void martkutxedi::set(float a, float b) {
+    this -> a = a;
+    this -> b = b;
+}
+
 class kvadrati : public martkutxedi {
 protected:
     float c;
@@ -41,6 +44,7 @@ public:
     kvadrati(float);
     float P();
     float area();
+    void set(float);
 };
 
 kvadrati::kvadrati() {
@@ -57,6 +61,10 @@ float kvadrati::P() {
 
 float kvadrati::area() {
     return c * c;
+}
+
+void kvadrati::set(float c) {
+    this -> c = c;
 }
 
 
