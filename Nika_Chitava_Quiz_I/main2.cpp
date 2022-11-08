@@ -19,7 +19,7 @@ void point::set_x(float x) {
     this -> x = x;
 }
 float point::distance() {
-    return x;
+    return abs(x);
 }
 
 class point2 : public point {
@@ -63,14 +63,13 @@ int main() {
     point A;
     point B(5);
 
-   // A.x = 19;
     A.set_x(19);
 
     a = &A;
-    cout << "Distance From object A: " << this -> A.distance() << "\n";
+    cout << "Distance From object A: " << a -> distance() << "\n";
 
     a = &B;
-    cout << "Distance From object A: " << this -> B.distance() << "\n";
+    cout << "Distance From object A: " << a -> distance() << "\n";
 
 
     cout << "---------------------------------------------" << endl;
@@ -81,12 +80,12 @@ int main() {
 
     C.set_x(8);
     C.set_y(9);
-    cout << "Distance From object A: " << this -> C.distance() << "\n";
+    cout << "Distance From object A: " << a -> distance() << "\n";
 
 
     point2 D(4, 5);
     a = &D;
-    cout << "Distance From object A: " << this -> D.distance() << "\n";
+    cout << "Distance From object A: " << a -> distance() << "\n";
 
 
     
