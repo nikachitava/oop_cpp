@@ -4,79 +4,68 @@ using namespace std;
 
 class martkutxedi {
 protected:
-    float a, b;
+    float a;
+    float b;
 public:
     martkutxedi();
     martkutxedi(float, float);
     float P();
     float area();
-    void set(float, float);
+
 };
 
-martkutxedi::martkutxedi() {
+class kvadrati : public martkutxedi {
+public:
+    kvadrati();
+    kvadrati(float);
+};
+
+martkutxedi :: martkutxedi() {
     this -> a = 0;
     this -> b = 0;
 }
 
-martkutxedi::martkutxedi(float a, float b) {
+martkutxedi :: martkutxedi(float a, float b) {
     this -> a = a;
     this -> b = b;
 }
 
-float martkutxedi::P() {
-    return 2 * (a+b);
+kvadrati :: kvadrati () : martkutxedi() {
+    this -> a = 0;
 }
 
-float martkutxedi::area() {
-    return a * b;
-}
-
-void martkutxedi::set(float a, float b) {
+kvadrati :: kvadrati (float a) : martkutxedi(a, b) {
     this -> a = a;
-    this -> b = b;
+    this -> b = a;
 }
 
-class kvadrati : public martkutxedi {
-protected:
-    float c;
-public:
-    kvadrati();
-    kvadrati(float);
-    float P();
-    float area();
-    void set(float);
-};
-
-kvadrati::kvadrati() {
-    this -> c = 0;
+float martkutxedi::P () {
+    if(a == b) {
+        return 4 * a;
+    } else {
+        return 2 * (a+b);
+    }
 }
 
-kvadrati::kvadrati(float c) {
-    this -> c = c;
-}
-
-float kvadrati::P() {
-    return 4 * c;
-}
-
-float kvadrati::area() {
-    return c * c;
-}
-
-void kvadrati::set(float c) {
-    this -> c = c;
+float martkutxedi::area () {
+    if(a == b) {
+        return a * a;
+    } else {
+        return a * b;
+    }
 }
 
 
 int main() {
-    martkutxedi ob1(2, 3);
-    
-    cout << ob1.area() << endl;
-    cout << ob1.P() << endl;
 
-    kvadrati ob2(5);
-    cout << ob2.area() << endl;
-    cout << ob2.P();
+    martkutxedi ob();
+    martkutxedi ob1(2, 3);
+    cout << "Martkutxedis perimetri:" << ob1.P() << "\t" << " Martkutxedis fartobi: " << ob1.area() << endl;
+
+    kvadrati ob2();
+    kvadrati ob3(8);
+    cout << "Kvadratis perimetri:" << ob3.P() << "\t" << " Kvadratis fartobi: " << ob3.area() << endl;
+
 
     return 0;
 }

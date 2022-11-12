@@ -34,7 +34,6 @@ void otxkutxedi::print() {
 }
 
 
-
 int main() {
 
     otxkutxedi obj;
