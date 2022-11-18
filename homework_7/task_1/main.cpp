@@ -90,6 +90,21 @@ float martkutxedi::P() {
     return 2*(a+b);
 }
 
+void wrewiri::set(float r) {
+    this -> r = r;
+}
+
+void samkutxedi::set(float a, float b, float c) {
+    this -> a = a;
+    this -> b = b;
+    this -> c = c;
+}
+
+void martkutxedi::set(float a, float b) {
+    this -> a = a;
+    this -> b = b;
+}
+
 int main() {
     geometria *ptr;
 
