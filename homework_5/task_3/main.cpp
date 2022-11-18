@@ -8,10 +8,11 @@ using namespace std;
 class geometria {
 protected:
     float R;
-    virtual float f() = 0;
 public:
+    virtual float f() = 0;
     void set(float);
     float get_R();
+    
 
 };
 
@@ -42,13 +43,17 @@ float sphere::f() {
 } 
 
 int main() { 
+    geometria *ptr;
+
     circle ob1;
     ob1.set(4);
-    cout << "Circle area : " << ob1.f() << endl;
+    ptr = &ob1;
+    cout << "Circle area : " << ptr -> f() << endl;
 
     sphere ob2;
     ob2.set(8);
-    cout << "Sphere volume : " << ob2.f() << endl;
+    ptr = &ob2;
+    cout << "Sphere volume : " << ptr -> f() << endl;
 
     return 0;
 }
