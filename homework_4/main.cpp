@@ -11,7 +11,7 @@ public:
     martkutxedi(float, float);
     float P();
     float area();
-
+    void set(float, float);
 };
 
 class kvadrati : public martkutxedi {
@@ -55,11 +55,19 @@ float martkutxedi::area () {
     }
 }
 
+void martkutxedi::set(float a, float b) {
+    this -> a = a;
+    this -> b = b;
+}
+
 
 int main() {
 
     martkutxedi ob();
     martkutxedi ob1(2, 3);
+    cout << "Martkutxedis perimetri:" << ob1.P() << "\t" << " Martkutxedis fartobi: " << ob1.area() << endl;
+
+    ob1.set(3, 4);
     cout << "Martkutxedis perimetri:" << ob1.P() << "\t" << " Martkutxedis fartobi: " << ob1.area() << endl;
 
     kvadrati ob2();
